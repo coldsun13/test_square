@@ -11,7 +11,8 @@ import SwiftUI
 struct square_testApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainSquareContainerView()
+                .ignoresSafeArea()
         }
     }
 }
