@@ -98,4 +98,24 @@ enum DependencyContainer {
         
         return service
     }
+    
+    // MARK: - UI Tests
+
+    static func setupForUITests() {
+        container = Container()
+
+        registerHelpers()
+
+        register {
+            MainSquareNetworkServiceStub() as MainSquareNetworkServiceProtocol
+        }
+
+        register(.singleton) {
+            NetworkRouter() as NetworkRouterProtocol
+        }
+
+        register {
+            RequestBuilder() as RequestBuilderProtocol
+        }
+    }
 }

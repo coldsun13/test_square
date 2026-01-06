@@ -23,6 +23,7 @@ struct TopBarView: View {
                             .foregroundColor(.primary)
                     }
                     .frame(width: 44, height: 44)
+                    .accessibilityIdentifier("topbar_back_button")
                 }
 
                 Spacer()
@@ -31,9 +32,12 @@ struct TopBarView: View {
             Text(title)
                 .font(.headline)
                 .foregroundColor(.primary)
+                .accessibilityIdentifier("topbar_title")
         }
         .frame(height: 56)
         .padding(.horizontal, 16)
         .background(Color(.systemBackground))
+        .accessibilityElement(children: .contain)
+        .accessibilityIdentifier("topbar_container")
     }
 }

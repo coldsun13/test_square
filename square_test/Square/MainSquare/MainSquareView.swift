@@ -28,6 +28,7 @@ struct MainSquareView: View {
             }
             .padding(.horizontal, 16)
         }
+        .accessibilityIdentifier("repos_scroll")
         .topBar(
             title: "Square Repos"
         )
