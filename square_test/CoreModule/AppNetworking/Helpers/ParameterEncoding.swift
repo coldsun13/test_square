@@ -25,39 +25,17 @@ enum ParameterEncoderError : String, Error {
 
 enum ParameterEncoding {
     
-    case urlEncoding
     case jsonEncoding
-    case urlAndJsonEncoding
     
     func encode(urlRequest: inout URLRequest, body: Parameters?, url: Parameters?) throws {
         do {
             switch self {
-            case .urlEncoding:
-                guard let urlParameters = url else {
-                    return
-                }
-                let urlEncoder: URLParameterEncoderProtocol = resolve()
-                try urlEncoder.encode(urlRequest: &urlRequest, with: urlParameters)
-                
             case .jsonEncoding:
                 guard let bodyParameters = body else {
                     return
                 }
                 let jsonEncoder: JSONParameterEncoderProtocol = resolve()
                 try jsonEncoder.encode(urlRequest: &urlRequest, with: bodyParameters)
-                
-            case .urlAndJsonEncoding:
-                guard let bodyParameters = body else {
-                    return
-                }
-                guard let urlParameters = url else {
-                    return
-                }
-                let urlEncoder: URLParameterEncoderProtocol = resolve()
-                let jsonEncoder: JSONParameterEncoderProtocol = resolve()
-                try urlEncoder.encode(urlRequest: &urlRequest, with: urlParameters)
-                try jsonEncoder.encode(urlRequest: &urlRequest, with: bodyParameters)
-                
             }
         } catch {
             throw error
@@ -67,30 +45,11 @@ enum ParameterEncoding {
     func encode(urlRequest: inout URLRequest, body: [Parameters]?, url: Parameters?) throws {
         do {
             switch self {
-            case .urlEncoding:
-                guard let urlParameters = url else {
-                    return
-                }
-                let urlEncoder: URLParameterEncoderProtocol = resolve()
-                try urlEncoder.encode(urlRequest: &urlRequest, with: urlParameters)
-                
             case .jsonEncoding:
                 guard let bodyParameters = body else {
                     return
                 }
                 let jsonEncoder: JSONParameterEncoderProtocol = resolve()
-                try jsonEncoder.encode(urlRequest: &urlRequest, with: bodyParameters)
-                
-            case .urlAndJsonEncoding:
-                guard let bodyParameters = body else {
-                    return
-                }
-                guard let urlParameters = url else {
-                    return
-                }
-                let urlEncoder: URLParameterEncoderProtocol = resolve()
-                let jsonEncoder: JSONParameterEncoderProtocol = resolve()
-                try urlEncoder.encode(urlRequest: &urlRequest, with: urlParameters)
                 try jsonEncoder.encode(urlRequest: &urlRequest, with: bodyParameters)
             }
         } catch {
