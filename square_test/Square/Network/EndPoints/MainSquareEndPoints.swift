@@ -12,18 +12,18 @@ enum MainSquareEndPoints {
 }
 
 extension MainSquareEndPoints: EndPointType {
-
+    
     var baseURL: URL {
         URL(string: "https://api.github.com")!
     }
-
+    
     var path: String {
         switch self {
         case .repos:
             return "/orgs/square/repos"
         }
     }
-
+    
     var httpMethod: HTTPMethod {
         switch self {
         case .repos:
@@ -34,10 +34,14 @@ extension MainSquareEndPoints: EndPointType {
     var task: HTTPTask {
         switch self {
         case .repos:
-            return .request
+            return .requestParametersAndHeaders(
+                bodyParameters: nil,
+                bodyEncoding: .jsonEncoding,
+                urlParameters: nil,
+                additionHeaders: requestHeaders)
         }
     }
-
+    
     var requiresRefresh: Bool {
         false
     }
