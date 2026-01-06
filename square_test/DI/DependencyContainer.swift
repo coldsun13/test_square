@@ -54,10 +54,6 @@ enum DependencyContainer {
     
     private static func registerHelpers() {
         register {
-            URLParameterEncoder() as URLParameterEncoderProtocol
-        }
-        
-        register {
             JSONParameterEncoder() as JSONParameterEncoderProtocol
         }
     }
