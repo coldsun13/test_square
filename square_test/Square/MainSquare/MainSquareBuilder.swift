@@ -28,7 +28,7 @@ struct MainSquareBuilder {
             state: .init(),
             router: router,
             inputData: inputData,
-            dependencies: .init()
+            dependencies: .init(networkService: resolve())
         )
         
         let controller = MainSquareHostController(

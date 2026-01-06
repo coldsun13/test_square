@@ -9,6 +9,7 @@
 
 enum MainSquareSideEffect: UISideEffect {
     case loading(Bool)
+    case error(Error)
 }
 
 // MARK: - Feature Definition
@@ -21,16 +22,21 @@ typealias MainSquareFeature = UIFeatureDefinition<
 
 // MARK: - Controller
 
-final class MainSquareHostController: UIFeatureController<MainSquareFeature, MainSquareView> {
-    
+final class MainSquareHostController:
+    UIFeatureController<MainSquareFeature, MainSquareView> {
+
     override func handleEffect(_ effect: MainSquareSideEffect) {
         switch effect {
+
         case .loading(let isLoading):
             if isLoading {
-//                ProgressUI.show()
+                LoadingHUD.show(on: view)
             } else {
-//                ProgressUI.dismiss()
+                LoadingHUD.hide()
             }
+
+        case .error:
+            LoadingHUD.hide()
         }
     }
 }
