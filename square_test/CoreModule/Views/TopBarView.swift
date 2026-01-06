@@ -1,0 +1,43 @@
+//
+//  TopBarView.swift
+//  square_test
+//
+//  Created by Ihar Tsimafeyeu on 6.01.26.
+//
+
+import SwiftUI
+
+struct TopBarView: View {
+
+    let title: String
+    let leftIcon: Image?
+    let onBack: (() -> Void)?
+
+    var body: some View {
+        ZStack {
+            HStack {
+                if let leftIcon, let onBack {
+                    Button(action: onBack) {
+                        leftIcon
+                            .renderingMode(.template)
+                            .foregroundColor(.primary)
+                    }
+                    .frame(width: 44, height: 44)
+                    .accessibilityIdentifier("topbar_back_button")
+                }
+
+                Spacer()
+            }
+
+            Text(title)
+                .font(.headline)
+                .foregroundColor(.primary)
+                .accessibilityIdentifier("topbar_title")
+        }
+        .frame(height: 56)
+        .padding(.horizontal, 16)
+        .background(Color(.systemBackground))
+        .accessibilityElement(children: .contain)
+        .accessibilityIdentifier("topbar_container")
+    }
+}
