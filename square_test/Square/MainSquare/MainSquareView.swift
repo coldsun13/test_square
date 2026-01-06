@@ -19,19 +19,19 @@ struct MainSquareView: View {
     @ObservedObject var store: StoreOf<MainSquareFeature>
 
     var body: some View {
-        NavigationView {
-            ScrollView {
-                LazyVStack(alignment: .leading, spacing: 0) {
-                    ForEach(store.state.items) { item in
-                        MainSquareRepoRowView(item: item)
-                        Divider()
-                    }
+        ScrollView {
+            LazyVStack(alignment: .leading, spacing: 0) {
+                ForEach(store.state.items) { item in
+                    MainSquareRepoRowView(item: item)
+                    Divider()
                 }
-                .padding(.horizontal, 16)
             }
-            .navigationTitle("Square Repos")
+            .padding(.horizontal, 16)
         }
-        .onAppear {
+        .topBar(
+            title: "Square Repos"
+        )
+        .onFirstTask {
             store.send(.fetchData)
         }
     }
