@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum HTTPTask {
+enum HTTPTask {
     
     case request
     

@@ -8,7 +8,7 @@
 import Foundation
 import Swinject
 
-public func resolve<T>(
+func resolve<T>(
     dependency: T.Type = T.self,
     named name: String = "Default"
 ) -> T {
@@ -54,16 +54,23 @@ enum DependencyContainer {
     
     private static func registerHelpers() {
         register {
-            URLParameterEncoder() as URLParameterEncoderProtocol
-        }
-        
-        register {
             JSONParameterEncoder() as JSONParameterEncoderProtocol
         }
     }
     
     private static func registerServices() {
 
+        register(.singleton) {
+            NetworkRouter() as NetworkRouterProtocol
+        }
+
+        register {
+            RequestBuilder() as RequestBuilderProtocol
+        }
+
+        register {
+            MainSquareNetworkService() as MainSquareNetworkServiceProtocol
+        }
     }
     
     // MARK: - Dependencies Managing
