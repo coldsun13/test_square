@@ -29,6 +29,10 @@ struct NetworkResponse {
             let model = try JSONDecoder().decode(T.self, from: data)
             return .success(model)
         } catch {
+            print("❌ DECODING ERROR:", error)
+            print("❌ RAW JSON:")
+            print(String(data: data, encoding: .utf8) ?? "NO BODY")
+
             return .failure(NetworkError(type: .unableToDecodeResponse))
         }
     }
