@@ -30,7 +30,7 @@ final class MainSquareHostController:
 
         case let .loading(isLoading):
             if isLoading {
-                LoadingHUD.show(on: view)
+                LoadingHUD.show()
             } else {
                 LoadingHUD.hide()
             }
