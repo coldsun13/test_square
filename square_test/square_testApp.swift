@@ -9,6 +9,10 @@ import SwiftUI
 
 @main
 struct square_testApp: App {
+    init() {
+        DependencyContainer.setup()
+    }
+    
     var body: some Scene {
         WindowGroup {
             MainSquareContainerView()
