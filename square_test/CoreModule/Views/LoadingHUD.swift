@@ -11,10 +11,14 @@ enum LoadingHUD {
 
     private static var overlay: UIView?
 
-    static func show(on view: UIView) {
+    static func show() {
         guard overlay == nil else { return }
+        guard
+            let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+            let window = windowScene.windows.first(where: { $0.isKeyWindow })
+        else { return }
 
-        let overlayView = UIView(frame: view.bounds)
+        let overlayView = UIView(frame: window.bounds)
         overlayView.backgroundColor = UIColor.black.withAlphaComponent(0.3)
         overlayView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 
@@ -23,7 +27,7 @@ enum LoadingHUD {
         indicator.startAnimating()
 
         overlayView.addSubview(indicator)
-        view.addSubview(overlayView)
+        window.addSubview(overlayView)
 
         overlay = overlayView
     }
