@@ -7,15 +7,15 @@
 
 import Foundation
 
-public protocol JSONParameterEncoderProtocol: ParameterEncoder {
+protocol JSONParameterEncoderProtocol: ParameterEncoder {
     func encode(urlRequest: inout URLRequest, with parameters: Data) throws
 }
 
-public final class JSONParameterEncoder: JSONParameterEncoderProtocol {
+final class JSONParameterEncoder: JSONParameterEncoderProtocol {
 
-    public init() {}
+    init() {}
 
-    public func encode(urlRequest: inout URLRequest, with parameters: Data) throws {
+    func encode(urlRequest: inout URLRequest, with parameters: Data) throws {
         urlRequest.httpBody = parameters
 
         let contentTypeHeader = HTTPHeader.contentType(.json)
@@ -25,7 +25,7 @@ public final class JSONParameterEncoder: JSONParameterEncoderProtocol {
         }
     }
 
-    public func encode(urlRequest: inout URLRequest, with parameters: Parameters) throws {
+    func encode(urlRequest: inout URLRequest, with parameters: Parameters) throws {
         do {
             let jsonAsData = try JSONSerialization.data(withJSONObject: parameters, options: .fragmentsAllowed)
             urlRequest.httpBody = jsonAsData
@@ -40,7 +40,7 @@ public final class JSONParameterEncoder: JSONParameterEncoderProtocol {
         }
     }
 
-    public func encode(urlRequest: inout URLRequest, with parameters: [Parameters]) throws {
+    func encode(urlRequest: inout URLRequest, with parameters: [Parameters]) throws {
         do {
             let jsonAsData = try JSONSerialization.data(withJSONObject: parameters, options: .fragmentsAllowed)
             urlRequest.httpBody = jsonAsData

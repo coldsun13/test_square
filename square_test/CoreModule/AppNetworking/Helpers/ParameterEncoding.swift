@@ -7,29 +7,29 @@
 
 import Foundation
 
-public typealias Parameters = [String: Any]
+typealias Parameters = [String: Any]
 
-public protocol ParameterEncoder {
+protocol ParameterEncoder {
     func encode(urlRequest: inout URLRequest, with parameters: Parameters) throws
     func encode(urlRequest: inout URLRequest, with parameters: [Parameters]) throws
 }
 
 extension ParameterEncoder {
-    public func encode(urlRequest: inout URLRequest, with parameters: [Parameters]) throws {}
+    func encode(urlRequest: inout URLRequest, with parameters: [Parameters]) throws {}
 }
 
-public enum ParameterEncoderError : String, Error {
+enum ParameterEncoderError : String, Error {
     case encodingFailed = "Parameter encoding failed."
     case missingURL = "URL is nil."
 }
 
-public enum ParameterEncoding {
+enum ParameterEncoding {
     
     case urlEncoding
     case jsonEncoding
     case urlAndJsonEncoding
     
-    public func encode(urlRequest: inout URLRequest, body: Parameters?, url: Parameters?) throws {
+    func encode(urlRequest: inout URLRequest, body: Parameters?, url: Parameters?) throws {
         do {
             switch self {
             case .urlEncoding:
@@ -64,7 +64,7 @@ public enum ParameterEncoding {
         }
     }
     
-    public func encode(urlRequest: inout URLRequest, body: [Parameters]?, url: Parameters?) throws {
+    func encode(urlRequest: inout URLRequest, body: [Parameters]?, url: Parameters?) throws {
         do {
             switch self {
             case .urlEncoding:

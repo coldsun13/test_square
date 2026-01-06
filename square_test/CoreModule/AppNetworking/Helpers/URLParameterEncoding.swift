@@ -7,13 +7,13 @@
 
 import Foundation
 
-public protocol URLParameterEncoderProtocol: ParameterEncoder { }
+protocol URLParameterEncoderProtocol: ParameterEncoder { }
 
-public final class URLParameterEncoder: URLParameterEncoderProtocol {
+final class URLParameterEncoder: URLParameterEncoderProtocol {
     
-    public init() {}
+    init() {}
     
-    public func encode(urlRequest: inout URLRequest, with parameters: Parameters) throws {
+    func encode(urlRequest: inout URLRequest, with parameters: Parameters) throws {
         guard let url = urlRequest.url else {
             throw ParameterEncoderError.missingURL
         }
