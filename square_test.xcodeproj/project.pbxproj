@@ -11,6 +11,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		C343638E2F0D2F4C0014B59D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C338EB972F0BF84D00A865FB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C338EB9E2F0BF84D00A865FB;
+			remoteInfo = square_test;
+		};
 		C34B65252F0D29F000929DA8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C338EB972F0BF84D00A865FB /* Project object */;
@@ -22,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		C338EB9F2F0BF84D00A865FB /* square_test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = square_test.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C34363882F0D2F4C0014B59D /* square_testUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = square_testUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C34B65212F0D29F000929DA8 /* square_testTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = square_testTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -29,6 +37,11 @@
 		C338EBA12F0BF84D00A865FB /* square_test */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = square_test;
+			sourceTree = "<group>";
+		};
+		C34363892F0D2F4C0014B59D /* square_testUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = square_testUITests;
 			sourceTree = "<group>";
 		};
 		C34B65222F0D29F000929DA8 /* square_testTests */ = {
@@ -47,6 +60,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C34363852F0D2F4C0014B59D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C34B651E2F0D29F000929DA8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -62,6 +82,7 @@
 			children = (
 				C338EBA12F0BF84D00A865FB /* square_test */,
 				C34B65222F0D29F000929DA8 /* square_testTests */,
+				C34363892F0D2F4C0014B59D /* square_testUITests */,
 				C338EBA02F0BF84D00A865FB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -71,6 +92,7 @@
 			children = (
 				C338EB9F2F0BF84D00A865FB /* square_test.app */,
 				C34B65212F0D29F000929DA8 /* square_testTests.xctest */,
+				C34363882F0D2F4C0014B59D /* square_testUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -100,6 +122,29 @@
 			productName = square_test;
 			productReference = C338EB9F2F0BF84D00A865FB /* square_test.app */;
 			productType = "com.apple.product-type.application";
+		};
+		C34363872F0D2F4C0014B59D /* square_testUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C34363922F0D2F4C0014B59D /* Build configuration list for PBXNativeTarget "square_testUITests" */;
+			buildPhases = (
+				C34363842F0D2F4C0014B59D /* Sources */,
+				C34363852F0D2F4C0014B59D /* Frameworks */,
+				C34363862F0D2F4C0014B59D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C343638F2F0D2F4C0014B59D /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				C34363892F0D2F4C0014B59D /* square_testUITests */,
+			);
+			name = square_testUITests;
+			packageProductDependencies = (
+			);
+			productName = square_testUITests;
+			productReference = C34363882F0D2F4C0014B59D /* square_testUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 		C34B65202F0D29F000929DA8 /* square_testTests */ = {
 			isa = PBXNativeTarget;
@@ -137,6 +182,10 @@
 					C338EB9E2F0BF84D00A865FB = {
 						CreatedOnToolsVersion = 16.2;
 					};
+					C34363872F0D2F4C0014B59D = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = C338EB9E2F0BF84D00A865FB;
+					};
 					C34B65202F0D29F000929DA8 = {
 						CreatedOnToolsVersion = 16.2;
 						LastSwiftMigration = 1620;
@@ -163,12 +212,20 @@
 			targets = (
 				C338EB9E2F0BF84D00A865FB /* square_test */,
 				C34B65202F0D29F000929DA8 /* square_testTests */,
+				C34363872F0D2F4C0014B59D /* square_testUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		C338EB9D2F0BF84D00A865FB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C34363862F0D2F4C0014B59D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -192,6 +249,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C34363842F0D2F4C0014B59D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C34B651D2F0D29F000929DA8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -202,6 +266,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		C343638F2F0D2F4C0014B59D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C338EB9E2F0BF84D00A865FB /* square_test */;
+			targetProxy = C343638E2F0D2F4C0014B59D /* PBXContainerItemProxy */;
+		};
 		C34B65262F0D29F000929DA8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C338EB9E2F0BF84D00A865FB /* square_test */;
@@ -385,6 +454,38 @@
 			};
 			name = Release;
 		};
+		C34363902F0D2F4C0014B59D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.i.tsimafeyeu.square-testUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = square_test;
+			};
+			name = Debug;
+		};
+		C34363912F0D2F4C0014B59D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.i.tsimafeyeu.square-testUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = square_test;
+			};
+			name = Release;
+		};
 		C34B65282F0D29F000929DA8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -441,6 +542,15 @@
 			buildConfigurations = (
 				C338EBAE2F0BF84E00A865FB /* Debug */,
 				C338EBAF2F0BF84E00A865FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C34363922F0D2F4C0014B59D /* Build configuration list for PBXNativeTarget "square_testUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C34363902F0D2F4C0014B59D /* Debug */,
+				C34363912F0D2F4C0014B59D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
