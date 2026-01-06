@@ -28,15 +28,15 @@ final class MainSquareHostController:
     override func handleEffect(_ effect: MainSquareSideEffect) {
         switch effect {
 
-        case .loading(let isLoading):
+        case let .loading(isLoading):
             if isLoading {
                 LoadingHUD.show(on: view)
             } else {
                 LoadingHUD.hide()
             }
-
-        case .error:
+        case let .error(error):
             LoadingHUD.hide()
+            ErrorAlert.show(error, from: self)
         }
     }
 }
