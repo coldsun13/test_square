@@ -14,7 +14,7 @@ struct MainSquareRepoRowView: View {
         VStack(alignment: .leading, spacing: 6) {
             Text(item.title)
                 .font(.headline)
-
+                .accessibilityIdentifier("repo_title_\(item.id)")
             Text(item.subtitle)
                 .font(.subheadline)
                 .foregroundColor(.secondary)

@@ -37,6 +37,7 @@ struct TopBarView: View {
         .frame(height: 56)
         .padding(.horizontal, 16)
         .background(Color(.systemBackground))
+        .accessibilityElement(children: .contain)
         .accessibilityIdentifier("topbar_container")
     }
 }
