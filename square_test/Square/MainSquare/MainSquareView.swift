@@ -23,11 +23,13 @@ struct MainSquareView: View {
             LazyVStack(alignment: .leading, spacing: 0) {
                 ForEach(store.state.items) { item in
                     MainSquareRepoRowView(item: item)
+                        .accessibilityIdentifier("repo_cell_\(item.id)")
                     Divider()
                 }
             }
             .padding(.horizontal, 16)
         }
+        .accessibilityIdentifier("repos_scroll")
         .topBar(
             title: "Square Repos"
         )
